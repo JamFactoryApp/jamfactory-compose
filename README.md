@@ -19,7 +19,7 @@
 * Create a ``users.acl`` file in the ``redis`` folder. Make sure to use the same password as in the ``.env`` file.
   See [users.acl.example](redis/users.acl.example) for an example ``users.acl`` file.
 
-* Create and start the development containers using ``docker-compose -f docker-compose.dev.yml up -d``
+* Create and start the development containers using ``docker-compose -f docker-compose.yml up -d``
 
 * After successful startup, the JamFactoryApp is available under ``http://localhost``. Automatic reloading on code changes inside the JamFactoryApp/jamfactory-web and JamFactoryApp/jamfactory-static repositories is supported.
 
