@@ -17,7 +17,7 @@
 * Create a ``.env`` file and fill out the information. See [.env.example](./jamfactory_dev/.env.example) for an example ``.env`` file.
 
 * Create a ``users.acl`` file in the ``jamfactory_dev/redis`` folder. Make sure to use the same password as in the ``.env`` file.
-  See [users.acl.example](./jamfactory_dev/redis/users.acl.example) for an example ``users.acl`` file.
+  See [users.acl.example](jamfactory_dev/users.acl.example) for an example ``users.acl`` file.
 
 * Create and start the development containers using ``docker-compose up -d``
 
