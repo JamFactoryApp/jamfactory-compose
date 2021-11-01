@@ -16,7 +16,6 @@ services:
 
   backend:
     build: ${JAM_BACKEND_PATH}
-    env_file: ${JAM_BACKEND_PATH}/.env
     environment:
       JAM_DATA_DIR: /data
       JAM_REDIS_ADDRESS: redis:6379
