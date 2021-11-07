@@ -1,1 +1,1 @@
-user default ~allkeys +@all -@admin -@scripting on >somepassword
+user default ~* +@all -@admin -@scripting on >somepassword
