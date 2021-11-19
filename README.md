@@ -21,7 +21,7 @@
 
 * Create and start the development containers using ``docker-compose up -d``
 
-* After successful startup, the JamFactoryApp is available under ``http://localhost``. Automatic reloading on code changes inside the JamFactoryApp/jamfactory-web and JamFactoryApp/jamfactory-static repositories is supported.
+* After successful startup, the JamFactoryApp is available under ``http://localhost:8080``. Automatic reloading on code changes inside the JamFactoryApp/jamfactory-web and JamFactoryApp/jamfactory-static repositories is supported.
 
 ## Production setup
 
@@ -39,4 +39,4 @@
 
 * Create and start the production containers using ``docker-compose -f docker-compose.prod.yml up -d``
 
-* After successful startup, the JamFactoryApp is available under the ports ``3000``, ``4200`` and ``9000``. You need to setup a reverse proxy to tie the services together and make it available using HTTPS.
+* After successful startup, the JamFactoryApp is available under ``http://localhost:8080``. You need to setup a reverse proxy to tie the services together and make it available using HTTPS.
