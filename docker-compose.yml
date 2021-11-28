@@ -62,7 +62,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ${JAM_STATIC_PATH}/src:/app/src
+      - ${JAM_STATIC_PATH}:/app
     environment:
       TERM: xterm-256color
       LANG: en_US.UTF-8
