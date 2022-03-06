@@ -43,6 +43,7 @@ services:
 
   web:
     container_name: jamfactory_web
+    command: "npm run start -- --host 0.0.0.0 --poll 1000 --deploy-url /jam/"
     build: ${JAM_WEB_PATH}
     ports:
       - "4200:4200"
