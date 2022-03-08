@@ -13,6 +13,11 @@ services:
       JAM_BACKEND_ADDRESS: backend:3000
       JAM_STATIC_ADDRESS: static:9000
       JAM_WEB_ADDRESS: web:4200
+    depends_on:
+      - backend
+      - redis
+      - web
+      - static
 
   backend:
     container_name: jamfactory_backend
