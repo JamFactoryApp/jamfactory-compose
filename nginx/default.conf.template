@@ -34,6 +34,7 @@ server {
     }
 
     location /jam {
+        rewrite /jam/(.*) /$1 break;
         expires max;
         log_not_found off;
         proxy_redirect off;

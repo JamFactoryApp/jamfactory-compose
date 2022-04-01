@@ -1,6 +1,7 @@
 version: "3.5"
 
 services:
+
   proxy:
     container_name: jamfactory_proxy
     image: nginx:latest
@@ -48,7 +49,7 @@ services:
 
   web:
     container_name: jamfactory_web
-    command: "npm run start -- --host 0.0.0.0 --poll 1000 --deploy-url /jam/"
+    command: "npm run start -- --host 0.0.0.0 --poll 1000"
     build: ./jamfactory-web
     ports:
       - "4200:4200"
