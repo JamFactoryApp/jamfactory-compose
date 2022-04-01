@@ -1,0 +1,9 @@
+[submodule "jamfactory-web"]
+	path = jamfactory-web
+	url = https://github.com/JamFactoryApp/jamfactory-web
+[submodule "jamfactory-backend"]
+	path = jamfactory-backend
+	url = https://github.com/JamFactoryApp/jamfactory-backend
+[submodule "jamfactory-static"]
+	path = jamfactory-static
+	url = https://github.com/JamFactoryApp/jamfactory-static

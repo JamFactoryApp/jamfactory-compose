@@ -21,7 +21,7 @@ services:
 
   backend:
     container_name: jamfactory_backend
-    build: ${JAM_BACKEND_PATH}
+    build: ./jamfactory-backend/
     env_file: .env
     environment:
       JAM_DATA_DIR: /data
@@ -32,6 +32,7 @@ services:
       - "3000:3000"
     volumes:
       - "jam-data:/data"
+      - ./jamfactory_backend:/app
     depends_on:
       - redis
     tty: true
@@ -48,12 +49,12 @@ services:
 
   web:
     container_name: jamfactory_web
-    command: "npm run start -- --host 0.0.0.0 --poll 1000 --deploy-url /jam/"
-    build: ${JAM_WEB_PATH}
+    command: "npm run start -- --host 0.0.0.0 --poll 1000"
+    build: ./jamfactory-web
     ports:
       - "4200:4200"
     volumes:
-      - ${JAM_WEB_PATH}/src:/app/src
+      - ./jamfactory-web/src:/app/src
     environment:
       TERM: xterm-256color
       LANG: en_US.UTF-8
@@ -64,11 +65,11 @@ services:
   static:
     container_name: jamfactory_static
     build:
-      context: ${JAM_STATIC_PATH}
+      context: ./jamfactory-static
     ports:
       - "9000:9000"
     volumes:
-      - ${JAM_STATIC_PATH}:/app
+      - ./jamfactory-static/src:/app/src
     environment:
       TERM: xterm-256color
       LANG: en_US.UTF-8

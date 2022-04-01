@@ -1,8 +1,9 @@
-version: "3"
+version: "3.5"
 
 services:
 
   proxy:
+    container_name: jamfactory_proxy
     image: nginx:latest
     ports:
       - "8080:80"
@@ -12,6 +13,11 @@ services:
       JAM_BACKEND_ADDRESS: backend:3000
       JAM_STATIC_ADDRESS: static:9000
       JAM_WEB_ADDRESS: web:4200
+    depends_on:
+      - backend
+      - redis
+      - web
+      - static
 
   backend:
     image: ghcr.io/jamfactoryapp/jamfactory-backend:latest
