@@ -10,9 +10,7 @@ server {
     listen [::]:80 default_server;
 
     location /api {
-        rewrite /api/(.*) /api/$1 break;
         add_header Cache-Control "no-cache";
-        expires max;
         log_not_found off;
         proxy_redirect off;
         proxy_set_header X-Real-IP  $remote_addr;
@@ -22,7 +20,6 @@ server {
     }
 
     location /ws {
-        expires max;
         log_not_found off;
         proxy_redirect off;
         proxy_set_header X-Real-IP  $remote_addr;
@@ -35,7 +32,6 @@ server {
 
     location /jam {
         rewrite /jam/(.*) /$1 break;
-        expires max;
         log_not_found off;
         proxy_redirect off;
         proxy_set_header X-Real-IP  $remote_addr;
@@ -47,7 +43,6 @@ server {
     }
 
     location / {
-        expires max;
         log_not_found off;
         proxy_redirect off;
         proxy_set_header X-Real-IP  $remote_addr;

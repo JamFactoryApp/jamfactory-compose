@@ -11,8 +11,8 @@ services:
       - ./nginx:/etc/nginx/templates
     environment:
       JAM_BACKEND_ADDRESS: backend:3000
-      JAM_STATIC_ADDRESS: static:9000
-      JAM_WEB_ADDRESS: web:4200
+      JAM_STATIC_ADDRESS: static:80
+      JAM_WEB_ADDRESS: web:80
     depends_on:
       - backend
       - redis
@@ -20,6 +20,7 @@ services:
       - static
 
   backend:
+    container_name: jamfactory_backend
     image: ghcr.io/jamfactoryapp/jamfactory-backend:latest
     env_file: .env
     environment:
@@ -32,6 +33,7 @@ services:
       - redis
 
   redis:
+    container_name: jamfactory_redis
     image: redis:latest
     command: redis-server /etc/redis/redis.conf
     restart: always
@@ -40,13 +42,15 @@ services:
       - "./redis:/etc/redis/"
 
   web:
+    container_name: jamfactory_web
     image: ghcr.io/jamfactoryapp/jamfactory-web:latest
     restart: always
 
   static:
+    container_name: jamfactory_static
     image: ghcr.io/jamfactoryapp/jamfactory-static:latest
     volumes:
-      - "./import:/usr/share/nginx/html"
+      - "./import:/usr/share/nginx/html/import"
     restart: always
 
 volumes:
