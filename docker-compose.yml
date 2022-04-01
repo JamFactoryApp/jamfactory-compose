@@ -32,7 +32,7 @@ services:
       - "3000:3000"
     volumes:
       - "jam-data:/data"
-      - ./jamfactory_backend:/app
+      - ./jamfactory-backend:/app
     depends_on:
       - redis
     tty: true
